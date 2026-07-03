@@ -6,8 +6,7 @@ public class InputHandler {
     private final Scanner scnr = new Scanner(System.in); //input stream
 
     GameEvent readEvent(){
-        System.out.println("> "); // prompt
-        String line = scnr.nextLine().trim().toLowerCase();
+        String line = scnr.nextLine().trim().toLowerCase(); //read character input
 
         //check to see if user did not type anything
         if(line.isEmpty()) return GameEvent.UNKNOWN;
