@@ -1,7 +1,5 @@
 package com.group5;
 
-import static java.nio.IntBuffer.wrap;
-
 public class Application {
 
     private final InputHandler inputHandler; //this will be responsible for grabbing input from the user and converting it into a specific type of event/

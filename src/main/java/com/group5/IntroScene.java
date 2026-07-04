@@ -44,12 +44,12 @@ public class IntroScene implements Scene{
 
     @Override
     public boolean isComplete() {
-        return false;
+        return complete;
     }
 
     @Override
     public Scene getNextLevel() {
-        return null;
+        return nextScene;
     }
 
     @Override
