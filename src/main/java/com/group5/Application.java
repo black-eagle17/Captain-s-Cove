@@ -33,7 +33,7 @@ public class Application {
             }
 
             //dispatch event to current level if we did not quit the game
-            currScene.handleEvent(event);
+            currScene.handleEvent(event, player);
 
             //check that we met the criteria for completing the scene or player died
             if(player.isPlayerDead()){
@@ -50,7 +50,6 @@ public class Application {
         Scene next = currScene.getNextLevel();
         if (next == null) {
             _state = GameState.WON; //if you can't advance to the next level, and player is not dead that means you won the game!
-            return;
         } else {
             currScene = next ; //set the next level/scene
         }

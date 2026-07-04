@@ -1,6 +1,5 @@
 package com.group5;
 
-import java.util.List;
 
 public class IntroScene implements Scene{
     private SceneState _sceneState;
@@ -25,20 +24,19 @@ public class IntroScene implements Scene{
     }
 
     @Override
-    public void handleEvent(GameEvent event) {
+    public void handleEvent(GameEvent event, Player player) {
         switch (event){
             case TRAVEL ->{
                 System.out.println("You have chosen to travel");
                 complete = true;
-                nextScene = new ExampleScene();// should be a level based on the previous choice. In this case, I only have one level, so I just return it
+                nextScene = new IntroScene();// should be a level based on the previous choice. In this case, I only have one level, so I just return it
             }
             case INVESTIGATE ->{
                 System.out.println("You have chosen to investigate the ship");
                 complete = true;
-                nextScene = new ExampleScene(); // should be a level based on the previous choice. In this case, I only have one level, so I just return it
+                nextScene = new IntroScene(); // should be a level based on the previous choice. In this case, I only have one level, so I just return it
             }
-            default -> {
-            }
+            default -> System.out.println("Invalid key press");
         }
     }
 

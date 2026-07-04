@@ -8,7 +8,7 @@ public class ExampleScene implements Scene {
 
 
     @Override
-    public void handleEvent(GameEvent event) {
+    public void handleEvent(GameEvent event, Player player) {
 
     }
 
