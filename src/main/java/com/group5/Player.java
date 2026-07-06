@@ -24,7 +24,7 @@ public class Player {
     }
 
     //update isPlayerDead flag to true
-    private void setPlayerDead() {
+    public void setPlayerDead() {
         this.isPlayerDead = true;
     }
 

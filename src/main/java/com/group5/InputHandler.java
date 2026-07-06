@@ -18,6 +18,7 @@ public class InputHandler {
             case 'a' -> GameEvent.ATTACK;
             case 't' -> GameEvent.TRAVEL;
             case 'i' -> GameEvent.INVESTIGATE;
+            case 'e' -> GameEvent.EAT;
             default -> GameEvent.UNKNOWN;
 
         };

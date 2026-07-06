@@ -49,8 +49,7 @@ public class ShipScene implements Scene{
                 System.out.println("Its old fish… you feel a sickly rumble in your stomach and your body begins to feel weak. You have food poisoning." +
                         "The sight of the moving water, Harry’s dead corpse, and what you now smell to be hot rotted fish all cause you to gag. You slip off of the side of the ship to your doom!");
               //WE NEED TO ADD A PLAYER DEAD SCENE
-                complete = true;
-                nextScene = new ShipScene(); // should be a level based on the previous choice. In this case, I only have one level, so I just return it
+                player.setPlayerDead(); // player is dead, don't need to return a new scene
             }
 
 
