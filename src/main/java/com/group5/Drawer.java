@@ -6,7 +6,7 @@ public class Drawer {
     public void draw(SceneState _sceneState, Player _player) {
         final int WIDTH = 60; // wrap text after 60 characters
         StringBuilder display = new StringBuilder(); // final output string
-        display.append("\u001b[2J\u001b[H"); // clears the ui before we draw again
+
 
         // print rpg game name and display current scene name
         int dashes = Math.max(3, WIDTH - _sceneState.getTitle().length() - 1);
@@ -19,7 +19,7 @@ public class Drawer {
         }
 
         // Player and enemy health stats
-        display.repeat("─", WIDTH).append("\n\n").append(gameStatus("Player", 12, 100, "Arrows and Keys")); //TODO: Should get hp from player object and also print inventory
+        display.repeat("─", WIDTH).append("\n\n").append(gameStatus("Player", _player.getHp(), 100, "Arrows and Keys")); //TODO: Should get hp from player object and also print inventory
         if(_sceneState.getEnemy() != null) {
            //TODO: get an enemy object and t
             //display.append(); //use gameStatus() to print enemy info if applicable
@@ -43,9 +43,12 @@ public class Drawer {
     }
     private String bar(int hp, int maxHp) {
         final int BAR_LENGTH = 12;
+
         if (maxHp <= 0) return "-".repeat(BAR_LENGTH);
+
         int filled = (int) Math.round((double) hp / maxHp * BAR_LENGTH);
         filled = Math.clamp(filled, 0, BAR_LENGTH);
+
         if (hp > 0 && filled == 0) filled = 1;
         return "#".repeat(filled) + "-".repeat(BAR_LENGTH - filled);
     }
