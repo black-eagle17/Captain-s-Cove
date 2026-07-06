@@ -19,7 +19,7 @@ public class Drawer {
         }
 
         // Player and enemy health stats
-        display.repeat("─", WIDTH).append("\n\n").append(gameStatus("Player", _player.getHp(), 100, "Arrows and Keys")); //TODO: Should get hp from player object and also print inventory
+        display.repeat("─", WIDTH).append("\n\n").append(gameStatus("Player", _player.getHp(), 100, _player.getInventory())); //TODO: Should get hp from player object and also print inventory
         if(_sceneState.getEnemy() != null) {
            //TODO: get an enemy object and t
             //display.append(); //use gameStatus() to print enemy info if applicable

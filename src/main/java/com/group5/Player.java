@@ -1,29 +1,50 @@
 package com.group5;
 
 import java.util.ArrayList;
-import java.util.List;
+
 
 public class Player {
     private int playerHealth;
     private boolean isPlayerDead;
-    private ArrayList<String> inventory;
+    private String inventory;
     private int dexterity;
     private int armor;
 
-    public Player(){
+    //ctor
+    public Player() {
         this.playerHealth = 100;
         this.isPlayerDead = false;
-        this.inventory = new ArrayList<String>();
+        this.inventory = "amulet";
     }
 
-    public boolean isPlayerDead(){
+    //check the isPlayerDead flag and return its value
+    public boolean isPlayerDead() {
 
         return isPlayerDead;
     }
-    public void setPlayerDead(){
+
+    //update isPlayerDead flag to true
+    private void setPlayerDead() {
         this.isPlayerDead = true;
     }
-    public int getHp(){
+
+    //returns the current player health
+    public int getHp() {
         return playerHealth;
+    }
+
+    //reduce overall player health
+    public void dealDamage(int damageAmt) {
+        if (!isPlayerDead()) {
+            playerHealth -= damageAmt;
+        }
+    }
+    //return the players inventory
+    public String getInventory(){
+        return inventory;
+    }
+    //add to players inventory
+    public  void addItem(String item){
+        inventory+= " " + item;
     }
 }
