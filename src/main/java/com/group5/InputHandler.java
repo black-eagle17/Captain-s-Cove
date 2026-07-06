@@ -13,6 +13,7 @@ public class InputHandler {
 
         char key = line.charAt(0);
         return switch(key){
+            case 'g' -> GameEvent.GRAB;
             case 'q' -> GameEvent.QUIT;
             case 'a' -> GameEvent.ATTACK;
             case 't' -> GameEvent.TRAVEL;

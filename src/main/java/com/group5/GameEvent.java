@@ -1,5 +1,5 @@
 package com.group5;
 
 public enum GameEvent {
-    ATTACK, TRAVEL, EAT, INVESTIGATE, QUIT, UNKNOWN;
+    ATTACK, TRAVEL, EAT, INVESTIGATE,GRAB, QUIT, UNKNOWN;
 }

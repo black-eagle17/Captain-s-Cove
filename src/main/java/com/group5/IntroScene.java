@@ -34,7 +34,7 @@ public class IntroScene implements Scene{
             case INVESTIGATE ->{
                 System.out.println("You have chosen to investigate the ship");
                 complete = true;
-                nextScene = new IntroScene(); // should be a level based on the previous choice. In this case, I only have one level, so I just return it
+                nextScene = new ShipScene(); // should be a level based on the previous choice. In this case, I only have one level, so I just return it
             }
             default -> System.out.println("Invalid key press");
         }
