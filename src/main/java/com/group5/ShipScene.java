@@ -20,7 +20,7 @@ public class ShipScene implements Scene{
                         """
         );
 
-        _sceneState.getChoices().add("(G)rab the sword.");
+        _sceneState.getChoices().add("(G)rab the katana.");
         _sceneState.getChoices().add("(I)nvestigate the Amulet");
         _sceneState.getChoices().add("(E)at fish sandwich");
     }
