@@ -1,6 +1,6 @@
 package com.group5;
 
-public class caveScene {
+public class caveScene implements Scene {
     private SceneState _sceneState;
     private boolean complete;
     private  Scene nextScene;
