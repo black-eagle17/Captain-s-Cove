@@ -19,6 +19,11 @@ public class InputHandler {
             case 't' -> GameEvent.TRAVEL;
             case 'i' -> GameEvent.INVESTIGATE;
             case 'e' -> GameEvent.EAT;
+            case 'l' -> GameEvent.LEFT;
+            case 'c' -> GameEvent.CENTER;
+            case 'r' -> GameEvent.RIGHT;
+
+
             default -> GameEvent.UNKNOWN;
 
         };
