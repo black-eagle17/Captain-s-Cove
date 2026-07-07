@@ -43,7 +43,7 @@ public class Application {
             }
 
         }
-        System.out.println("GAME OVER!!! YOU LOST"); // TODO: should remove this and write a function that checks the game state variable to see the outcome
+        System.out.println("GAME OVER!!! YOU LOST"); // print game over
     }
     //grab the next scene or check if we won the game
     private void advanceLevel() {
