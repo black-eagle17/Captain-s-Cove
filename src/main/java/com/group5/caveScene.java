@@ -66,6 +66,9 @@ public class caveScene implements Scene {
                 System.out.println("attacked siren");
                 //this is where the dice roll encounter is be.
             }
+            case SING -> {
+                System.out.println("You have chosen to sinnnnggggg....");
+            }
             default -> System.out.println("Invalid key press");
         }
     }
