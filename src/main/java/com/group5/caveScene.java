@@ -9,10 +9,12 @@ public class caveScene implements Scene {
         this._sceneState = new SceneState();
         _sceneState.setSceneName("Cave Scene");
         _sceneState.setStory(
-                "  The deeper and deeper you go, the darker and darker it gets.\n" +
-                        " Your feet are wary and your spirits are low. You slowly come upon lights.\n" +
-                        " A fire of some sort? No… magic? There are 3 tunnels, all glowing with a different color light.\n" +
-                         "on the left you smell the scent of fish down Blue tunnel, in the center you hear music down Purple tunnel,\n and to the right see shadows moving down Green tunnel\n "
+
+                "  The deeper and deeper you go, the darker and darker it gets." +
+                        " Your feet are wary and your spirits are low. You slowly come upon lights." +
+                        " A fire of some sort? No… magic? There are 3 tunnels, all glowing with a different color light." +
+                         "on the left you smell the scent of fish down Blue tunnel, in the center you hear music down Purple tunnel, and to the right see shadows moving down Green tunnel "
+          
         );
         _sceneState.getChoices().add("(L)Blue Cave.");
         _sceneState.getChoices().add("(C)Purple Cave.");
@@ -24,6 +26,7 @@ public class caveScene implements Scene {
     public void handleEvent(GameEvent event, Player player) {
         switch (event){
             case LEFT ->{
+
                 System.out.println("You take one step into the blue cave and find yourself transported right back to the mouth of cave where you started.\n ");
                    //TODO: MAKE SURE THIS OPTION RETURNS TO BEGINING OF THE CAVE SCENE
                 complete = true;
