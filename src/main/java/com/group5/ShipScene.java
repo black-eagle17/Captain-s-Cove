@@ -35,7 +35,7 @@ public class ShipScene implements Scene{
                 //WE NEED TO ADD +3 TO PLAYER STRENGTH AND DEX HERE
 
                 complete = true;
-                nextScene = new IntroScene();// should be a level based on the previous choice. In this case, I only have one level, so I just return it
+                nextScene = new caveScene();// should be a level based on the previous choice. In this case, I only have one level, so I just return it
             }
             case INVESTIGATE ->{
                 System.out.println("You take the Amulet and see it glow. *Player earns +2 to performance and charisma! " +
@@ -43,7 +43,7 @@ public class ShipScene implements Scene{
                         "You are increasingly curious about what mystical events occurred here and take your first step into the shell to find answers.");
                 //WE NEED TO ADD +3 TO PLAYER CHARISMA HERE
                 complete = true;
-                nextScene = new ShipScene(); // should be a level based on the previous choice. In this case, I only have one level, so I just return it
+                nextScene = new caveScene(); // should be a level based on the previous choice. In this case, I only have one level, so I just return it
             }
             case EAT ->{
                 System.out.println("Its old fish… you feel a sickly rumble in your stomach and your body begins to feel weak. You have food poisoning." +
@@ -60,12 +60,12 @@ public class ShipScene implements Scene{
 
     @Override
     public boolean isComplete() {
-        return false;
+        return complete;
     }
 
     @Override
     public Scene getNextLevel() {
-        return null;
+        return nextScene;
     }
 
     @Override
