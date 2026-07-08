@@ -39,6 +39,47 @@ public class caveScene implements Scene {
                         "One of the sirens rises from the water and you see an amulet dangling around the creature's lock neck.\n" +
                         " They speak, “Show us why you deserve to live and you will gain passage. Fail and perish.\n" +
                         "You’ve only got one turn at this, choose an action: Attack, Sing, Flee\n");
+
+                //this is my attempt to add the next portion of this scene by embedding a switch case
+                _sceneState.getChoices().add("(A)Attack");
+                _sceneState.getChoices().add("(N)Sing");
+                _sceneState.getChoices().add("(F)Flee");
+
+
+                switch (event){
+                    case ATTACK -> {
+                        System.out.println("You have chosen to attack!");
+                        System.out.println("Player rolls a D20 to decide fate...");
+                        System.out.println("0-9 you fail, 10-20 you pass.");
+
+                      //TODO: here the player will encounter the first dice roll. we need to generate a random number from 1-20, and add the following if statement logic below.
+                        // *If dice roll total is 0-9 inclusive player fails(insert fail scene from script) if dice roll total gets 10 or above inclusive(insert success scene from script that sends player to next scene) additionally add logic to add +3 to dice roll if player possess sword.
+
+                        //the line below terminated the program until we add the needed code
+                        player.setPlayerDead();
+                    }
+                    case SING -> {
+                        System.out.println("You have chosen to sing!");
+                        System.out.println("Player rolls a D20 to decide fate...");
+                        System.out.println("0-9 you fail, 10-20 you pass.");
+
+                        //TODO: here the player will encounter the first dice roll. we need to generate a random number from 1-20, and add the following if statement logic below.
+
+                        // *If dice roll total is 0-9 inclusive player fails(insert fail scene from script) if dice roll total gets 10 or above inclusive(insert success scene from script that sends player to next scene) additionally add logic to add +3 to dice roll if player possess amulet.
+
+                        //the line below terminated the program until we add the needed code
+                        player.setPlayerDead();
+                    }
+                    case FLEE -> {
+                        System.out.println("You cower in fear and hurrilddy run back from whence you came");
+                        complete = true;
+                        nextScene = new caveScene(); //this should return the player back to the cave scene
+                    }
+                    default -> System.out.println("Invalid key press");
+                }
+
+
+
                 complete = true;
                 nextScene = new ShipScene(); // TODO: A NEW SCENE WILL BE ADDED HERE FROM SCRIPT THAT INCLUDES A PLAYER DICE ROLL ANS SIREN ENCOUNTER
             }

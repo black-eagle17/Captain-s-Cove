@@ -24,6 +24,8 @@ public class InputHandler {
             case 'r' -> GameEvent.RIGHT;
             case 's' -> GameEvent.STAY;
             case 'k' -> GameEvent.TRACK;
+            case 'n' -> GameEvent.SING ;
+            case 'f' -> GameEvent.FLEE;
 
 
             default -> GameEvent.UNKNOWN;
