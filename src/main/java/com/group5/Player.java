@@ -2,8 +2,8 @@ package com.group5;
 
 import java.util.ArrayList;
 
-
 public class Player {
+
     private int playerHealth;
     private boolean isPlayerDead;
     private String inventory;
@@ -14,12 +14,11 @@ public class Player {
     public Player() {
         this.playerHealth = 100;
         this.isPlayerDead = false;
-        this.inventory = "amulet";
+        this.inventory = "";
     }
 
     //check the isPlayerDead flag and return its value
     public boolean isPlayerDead() {
-
         return isPlayerDead;
     }
 
@@ -39,12 +38,14 @@ public class Player {
             playerHealth -= damageAmt;
         }
     }
+
     //return the players inventory
-    public String getInventory(){
+    public String getInventory() {
         return inventory;
     }
+
     //add to players inventory
-    public  void addItem(String item){
-        inventory+= " " + item;
+    public void addItem(String item) {
+        inventory += " " + item;
     }
 }
