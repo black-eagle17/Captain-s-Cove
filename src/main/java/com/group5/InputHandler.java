@@ -22,6 +22,8 @@ public class InputHandler {
             case 'l' -> GameEvent.LEFT;
             case 'c' -> GameEvent.CENTER;
             case 'r' -> GameEvent.RIGHT;
+            case 's' -> GameEvent.STAY;
+            case 'k' -> GameEvent.TRACK;
 
 
             default -> GameEvent.UNKNOWN;
