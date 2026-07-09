@@ -48,7 +48,7 @@ public class ShipScene implements Scene {
                         "You’re tempted to open it but you look at the far-too-aged Harry and decide against it.\n " +
                         "You are increasingly curious about what mystical events occurred here and take your first step into the shell to find answers.\n"
                 );
-                //WE NEED TO ADD +3 TO PLAYER CHARISMA HERE
+                player.addItem("Amulet");
                 complete = true;
                 nextScene = new caveScene(); // should be a level based on the previous choice. In this case, I only have one level, so I just return it
             }
