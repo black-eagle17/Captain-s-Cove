@@ -5,9 +5,11 @@ public class caveScene implements Scene {
     private SceneState _sceneState;
     private boolean complete;
     private Scene nextScene;
+    private InventoryCheck itemCheck;
 
     public caveScene() {
         this._sceneState = new SceneState();
+        this.itemCheck = new InventoryCheck();
         _sceneState.setSceneName("Cave Scene");
         _sceneState.setStory(
             "  The deeper and deeper you go, the darker and darker it gets." +
@@ -63,8 +65,7 @@ public class caveScene implements Scene {
                 nextScene = new ShipScene(); // TODO: A NEW SCENE WILL BE ADDED HERE FROM SCRIPT THAT INCLUDES A PLAYER DICE ROLL AND GOBLIN ENCOUNTER
             }
             case ATTACK -> {
-                System.out.println("attacked siren");
-                //this is where the dice roll encounter is be.
+                itemCheck.evaluateInventory(player);
             }
             case SING -> {
                 System.out.println("You have chosen to sinnnnggggg....");
