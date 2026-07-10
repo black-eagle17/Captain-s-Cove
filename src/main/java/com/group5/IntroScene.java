@@ -34,7 +34,7 @@ public class IntroScene implements Scene{
             case TRAVEL ->{
                 System.out.println("You have chosen to travel\n");
                 complete = true;
-                nextScene = new IntroScene();// should be a level based on the previous choice. In this case, I only have one level, so I just return it
+                nextScene = new InlandScene();// should be a level based on the previous choice. In this case, I only have one level, so I just return it
             }
             case INVESTIGATE ->{
                 System.out.println("You have chosen to investigate the ship\n");
