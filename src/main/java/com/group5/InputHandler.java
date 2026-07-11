@@ -15,6 +15,22 @@ public class InputHandler {
         return switch(choice){
             case "1a" -> GameEvent.TRAVEL;
             case "1b" -> GameEvent.INVESTIGATE;
+            case "1c" -> GameEvent.STAY;
+            case "1d" -> GameEvent.TRACK;
+            case "1e"-> GameEvent.GRAB;
+            case "1f" -> GameEvent.INSPECT;
+            case "1g" -> GameEvent.EAT;
+            case "2a" -> GameEvent.LEFT;
+            case "2b" -> GameEvent.CENTER;
+            case "2c" -> GameEvent.RIGHT;
+            case "2d" -> GameEvent.ATTACK;
+            case "2e" -> GameEvent.SING;
+            case "2f" -> GameEvent.FLEE;
+            case "2g" -> GameEvent.SWING;
+            case "2h" -> GameEvent.EXPLAIN;
+
+
+
 
 
 

@@ -13,5 +13,9 @@ public enum GameEvent {
     CENTER,
     RIGHT,
     STAY,
-    TRACK
+    TRACK,
+    INSPECT,
+    FLEE,
+    SWING,
+    EXPLAIN
 }

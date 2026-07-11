@@ -12,14 +12,15 @@ public class caveScene implements Scene {
         this.itemCheck = new InventoryCheck();
         _sceneState.setSceneName("Cave Scene");
         _sceneState.setStory(
-            "  The deeper and deeper you go, the darker and darker it gets." +
-                " Your feet are wary and your spirits are low. You slowly come upon lights." +
-                " A fire of some sort? No… magic? There are 3 tunnels, all glowing with a different color light." +
-                "on the left you smell the scent of fish down Blue tunnel, in the center you hear music down Purple tunnel, and to the right see shadows moving down Green tunnel "
+            "  The deeper and deeper you go, the darker and darker it gets.\n" +
+                " Your feet are wary and your spirits are low. You slowly come upon lights.\n" +
+                " A fire of some sort? No… magic? There are 3 tunnels, all glowing with a different color light.\n" +
+                "on the left you smell the scent of fish down Blue tunnel, in the center you hear music down Purple tunnel,\n" +
+                    " and to the right see shadows moving down Green tunnel "
         );
-        _sceneState.getChoices().add("(L)Blue Cave.");
-        _sceneState.getChoices().add("(C)Purple Cave.");
-        _sceneState.getChoices().add("(R)Green Cave.");
+        _sceneState.getChoices().add("(2a)Blue Cave.");
+        _sceneState.getChoices().add("(2b)Purple Cave.");
+        _sceneState.getChoices().add("(2c)Green Cave.");
     }
 
     @Override
@@ -44,31 +45,55 @@ public class caveScene implements Scene {
                     "One of the sirens rises from the water and you see an amulet dangling around the creature's lock neck.\n" +
                     " They speak, “Show us why you deserve to live and you will gain passage. Fail and perish.\n" +
                     "You’ve only got one turn at this, choose an action: Attack, Sing, Flee\n";
+
                 _sceneState.setStory(sirenPrompt);
                 _sceneState.setSceneName("Cave Scene => Sirens"); //set the updated  name of the scene.
                 _sceneState.getChoices().clear(); //empty the choices list and add these new ones
-                _sceneState.getChoices().add("(A)ttack");
-                _sceneState.getChoices().add("(S)ing");
-                _sceneState.getChoices().add("(F)lee");
+                _sceneState.getChoices().add("(2d)Attack");
+                _sceneState.getChoices().add("(2e)Sing");
+                _sceneState.getChoices().add("(2f)Flee");
+
+                /*This is where another switch case will happen to evaluate choices above and potentially
+                will encounter dice roll if player does not flee
+                 */
+
             }
             case RIGHT -> {
-                System.out.println(
-                    "Goblins!\n " +
+
+                String goblinPromt =   "Goblins!\n " +
                         "*Dice Roll Encounter\n" +
                         "You run down the green tunnel towards the shadows.\n " +
                         "Could it be your friends? Could it be their captors?\n" +
                         "You stop in your tracks to see a giant door.Guarding it, goblins. Like, a bunch of Goblins.\n" +
                         "The Goblins hiss at you before falling into formation, their swords pointed towards you.\n" +
-                        "You’ve only got one turn at this, choose an action: Swing Sword, Explain yourself, Flee\n"
-                );
+                        "You’ve only got one turn at this, choose an action: Swing Sword, Explain yourself, Flee\n";
+
+
+                _sceneState.setStory(goblinPromt);
+                _sceneState.setSceneName("Cave Scene => Goblins"); //set the updated  name of the scene.
+                _sceneState.getChoices().clear(); //empty the choices list and add these new ones
+                _sceneState.getChoices().add("(2g)Swing Sword");
+                _sceneState.getChoices().add("(2h)Explain yourself");
+                _sceneState.getChoices().add("(2f)Flee");
+
+
+
                 complete = true;
                 nextScene = new ShipScene(); // TODO: A NEW SCENE WILL BE ADDED HERE FROM SCRIPT THAT INCLUDES A PLAYER DICE ROLL AND GOBLIN ENCOUNTER
             }
             case ATTACK -> {
+                System.out.println("You have chosen to ATTACK!");
                 itemCheck.evaluateInventory(player);
             }
             case SING -> {
                 System.out.println("You have chosen to sinnnnggggg....");
+                itemCheck.evaluateInventory(player);
+            }
+            case FLEE -> {
+                System.out.println("You have chosen to flee like a coward!\n" +
+                        " You consequently find yourself back at the cave mouth from whence you came.");
+                complete = true;
+                nextScene = new caveScene();
             }
             default -> System.out.println("Invalid key press");
         }
