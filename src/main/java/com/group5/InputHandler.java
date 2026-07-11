@@ -6,22 +6,17 @@ public class InputHandler {
     private final Scanner scnr = new Scanner(System.in); //input stream
 
     GameEvent readEvent(){
-        String line = scnr.nextLine().trim().toLowerCase(); //read character input
+        String userInput = scnr.nextLine().trim().toLowerCase(); //read character input
 
         //check to see if user did not type anything
-        if(line.isEmpty()) return GameEvent.UNKNOWN;
+        if(userInput.isEmpty()) return GameEvent.UNKNOWN;
 
-        char key = line.charAt(0);
-        return switch(key){
-            case 'g' -> GameEvent.GRAB;
-            case 'q' -> GameEvent.QUIT;
-            case 'a' -> GameEvent.ATTACK;
-            case 't' -> GameEvent.TRAVEL;
-            case 'i' -> GameEvent.INVESTIGATE;
-            case 'e' -> GameEvent.EAT;
-            case 'l' -> GameEvent.LEFT;
-            case 'c' -> GameEvent.CENTER;
-            case 'r' -> GameEvent.RIGHT;
+       String choice = userInput.substring(0,2);
+        return switch(choice){
+            case "1a" -> GameEvent.TRAVEL;
+            case "1b" -> GameEvent.INVESTIGATE;
+
+
 
 
             default -> GameEvent.UNKNOWN;
