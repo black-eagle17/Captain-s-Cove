@@ -28,6 +28,20 @@ public class InputHandler {
             case "2f" -> GameEvent.FLEE;
             case "2g" -> GameEvent.SWING;
             case "2h" -> GameEvent.EXPLAIN;
+            case "ll" -> GameEvent.LOOT;
+            case "3a" -> GameEvent.HOLE;
+            case "3b" -> GameEvent.CREW;
+            case "4a" -> GameEvent.ATTEMPT;
+            case "4b" -> GameEvent.READY;
+
+
+
+
+
+
+
+
+
             default -> GameEvent.UNKNOWN;
 
         };
