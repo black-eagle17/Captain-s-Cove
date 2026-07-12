@@ -81,7 +81,7 @@ public class caveScene implements Scene {
             }
             case ATTACK -> {
                 System.out.println("You have chosen to ATTACK!");
-                itemCheck.evaluateInventory(player);
+                executeDiceRoll(player);
             }
             case SING -> {
                 System.out.println("You have chosen to sinnnnggggg....");
@@ -94,6 +94,27 @@ public class caveScene implements Scene {
                 nextScene = new caveScene();
             }
             default -> System.out.println("Invalid key press");
+        }
+    }
+
+    private void executeDiceRoll(Player player){
+        int numRoll = itemCheck.evaluateInventory(player);
+        if(numRoll < 10){
+            //output the player rolled number and set player dead
+            String output ="You rolled " + numRoll + ",You lunge at the Siren and slip on the wet stones, hitting your head and being dragged into the dark water.";
+            _sceneState.setStory(output);
+            player.setPlayerDead();
+        }
+        else {
+            String output =
+            "You rolled "+ numRoll +" You lunge at the siren and grab them, your arms wrapping\n" +
+            "around them as they are restrained. There is no need for violence, the fish person\n" +
+            "calmly muses. At least… not with us… You release your grip.\n" +
+            "I know who you are looking for.  A large whirlpool begins to form in front of you.\n" +
+            "Your friends are just through here. But beware, they are guarded by a beast. We are sworn not to intrude on it,\n" +
+            "lest it come for our own. But perhaps we can help you defeat it.\n";
+            _sceneState.setStory(output);
+            nextScene = new caveScene();
         }
     }
 
