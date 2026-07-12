@@ -148,6 +148,27 @@ public class caveScene implements Scene {
             }
 
             case EXPLAIN ->{
+                System.out.println("You have chosen to EXPLAIN YOUR SELF!");
+                int numRoll = itemCheck.evaluateInventory(player);
+                if(numRoll < 10){
+                    //output the player rolled number and set player dead
+                    String output ="You lunge forward and slip on the damp cave floor, falling backwards as if there were a banana peel. You look like a fool. As youre on the ground, the Goblins swarm you.";
+
+                    System.out.println(output);
+                    player.setPlayerDead();
+                }
+                else {
+                    String output =
+                    "You calmly explain that you mean no harm and that you are simply looking for your crew.\n" +
+                    "The Goblin closest to you looks to his group and then back at you before dropping to its knees.\n"+
+
+                     "Oh please, help us defeat the beast beyond this door! We have been able to keep it out of this tunnel\n" +
+                     "but have lost too many trying to fight it! It killed one of your men when you crashed, but together\n" +
+                      "we can free your friends and ours!";
+                    _sceneState.setStory(output);
+                    complete = true;
+                    nextScene = new HallwayScene();
+                }
 
             }
 
