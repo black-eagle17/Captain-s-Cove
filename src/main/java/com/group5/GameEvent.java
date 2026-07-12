@@ -18,5 +18,7 @@ public enum GameEvent {
     FLEE,
     SWING,
     EXPLAIN,
-    LOOT
+    LOOT,
+    HOLE,
+    CREW
 }

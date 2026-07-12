@@ -29,6 +29,9 @@ public class InputHandler {
             case "2g" -> GameEvent.SWING;
             case "2h" -> GameEvent.EXPLAIN;
             case "ll" -> GameEvent.LOOT;
+            case "3a" -> GameEvent.HOLE;
+            case "3b" -> GameEvent.CREW;
+
 
 
 
