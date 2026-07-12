@@ -96,7 +96,7 @@ public class caveScene implements Scene {
                     "I know who you are looking for.  A large whirlpool begins to form in front of you.\n" +
                     "Your friends are just through here. But beware, they are guarded by a beast. We are sworn not to intrude on it,\n" +
                     "lest it come for our own. But perhaps we can help you defeat it.\n";
-                    _sceneState.setStory(output);
+                    System.out.println(output);
                     complete=true;
                     nextScene = new HallwayScene();
                 }
@@ -116,7 +116,7 @@ public class caveScene implements Scene {
                     " The sirens face softens in deep appreciation for your song. “I know who you are looking for.\n"+
                     "A large whirlpool begins to form in front of you. Your friends are just through here. But beware, they\n" +
                     "are guarded by a beast. We are sworn not to intrude on it, lest it come for our own. But perhaps we can help you defeat it.\n";
-                    _sceneState.setStory(output);
+                    System.out.println(output);
                     complete = true;
                     nextScene = new HallwayScene();
                 }
@@ -141,7 +141,7 @@ public class caveScene implements Scene {
                     "in the room. The goblin on the ground crawls towards you, “Oh please, help us defeat the beast beyond\n"+
                     "this door! We have been able to keep it contained but have lost too many trying to fight it! It killed\n"+
                     "one of your men when you crashed, but together we can free your friends and ours!";
-                    _sceneState.setStory(output);
+                    System.out.println(output);
                     complete = true;
                     nextScene = new HallwayScene();
                 }
@@ -165,7 +165,7 @@ public class caveScene implements Scene {
                      "Oh please, help us defeat the beast beyond this door! We have been able to keep it out of this tunnel\n" +
                      "but have lost too many trying to fight it! It killed one of your men when you crashed, but together\n" +
                       "we can free your friends and ours!";
-                    _sceneState.setStory(output);
+                    System.out.println(output);
                     complete = true;
                     nextScene = new HallwayScene();
                 }
