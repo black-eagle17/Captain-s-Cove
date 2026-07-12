@@ -81,13 +81,97 @@ public class caveScene implements Scene {
             }
             case ATTACK -> {
                 System.out.println("You have chosen to ATTACK!");
-                itemCheck.evaluateInventory(player);
-
+                int numRoll = itemCheck.evaluateInventory(player);
+                if(numRoll < 10){
+                    //output the player rolled number and set player dead
+                    String output ="You lunge at the Siren and slip on the wet stones, hitting your head and being dragged into the dark water.";
+                    System.out.println(output);
+                    player.setPlayerDead();
+                }
+                else {
+                    String output =
+                    "You lunge at the siren and grab them, your arms wrapping\n" +
+                    "around them as they are restrained. There is no need for violence, the fish person\n" +
+                    "calmly muses. At least… not with us… You release your grip.\n" +
+                    "I know who you are looking for.  A large whirlpool begins to form in front of you.\n" +
+                    "Your friends are just through here. But beware, they are guarded by a beast. We are sworn not to intrude on it,\n" +
+                    "lest it come for our own. But perhaps we can help you defeat it.\n";
+                    System.out.println(output);
+                    complete=true;
+                    nextScene = new HallwayScene();
+                }
             }
+
             case SING -> {
                 System.out.println("You have chosen to sinnnnggggg....");
-                itemCheck.evaluateInventory(player);
+                int numRoll = itemCheck.evaluateInventory(player);
+                if(numRoll < 10){
+                    //output the player rolled number and set player dead
+                    String output ="You clear your throat and sing. Terribly. The Mermaid in front of you sings and their amulet expels a purple shadow that engulfs you. Your skin turns to ash and your dead skeleton hits the floor ";
+                    System.out.println(output);
+                    player.setPlayerDead();
+                }
+                else {
+                    String output =
+                    " The sirens face softens in deep appreciation for your song. “I know who you are looking for.\n"+
+                    "A large whirlpool begins to form in front of you. Your friends are just through here. But beware, they\n" +
+                    "are guarded by a beast. We are sworn not to intrude on it, lest it come for our own. But perhaps we can help you defeat it.\n";
+                    System.out.println(output);
+                    complete = true;
+                    nextScene = new HallwayScene();
+                }
             }
+
+            //cases for the goblin
+            case SWING -> {
+                System.out.println("You have chosen to SWING YOUR SWORD!");
+                int numRoll = itemCheck.evaluateInventory(player);
+                if(numRoll < 10){
+                    //output the player rolled number and set player dead
+                    String output ="You lunge forward and slip on the damp cave floor, falling backwards as if there were a banana peel. You look like a fool. As youre on the ground, the Goblins swarm you.";
+
+                    System.out.println(output);
+                    player.setPlayerDead();
+                }
+                else {
+                    String output =
+                    "You're stronger than a toddler!\n" +
+                    "You lunge at the Goblin closest and strike true, knocking it back a few feet to the ground.\n"+
+                    "It didn’t take much, they're tiny guys. The other goblins  look at you and revere you as the strongest\n"+
+                    "in the room. The goblin on the ground crawls towards you, “Oh please, help us defeat the beast beyond\n"+
+                    "this door! We have been able to keep it contained but have lost too many trying to fight it! It killed\n"+
+                    "one of your men when you crashed, but together we can free your friends and ours!";
+                    System.out.println(output);
+                    complete = true;
+                    nextScene = new HallwayScene();
+                }
+            }
+
+            case EXPLAIN ->{
+                System.out.println("You have chosen to EXPLAIN YOUR SELF!");
+                int numRoll = itemCheck.evaluateInventory(player);
+                if(numRoll < 10){
+                    //output the player rolled number and set player dead
+                    String output ="You lunge forward and slip on the damp cave floor, falling backwards as if there were a banana peel. You look like a fool. As youre on the ground, the Goblins swarm you.";
+
+                    System.out.println(output);
+                    player.setPlayerDead();
+                }
+                else {
+                    String output =
+                    "You calmly explain that you mean no harm and that you are simply looking for your crew.\n" +
+                    "The Goblin closest to you looks to his group and then back at you before dropping to its knees.\n"+
+
+                     "Oh please, help us defeat the beast beyond this door! We have been able to keep it out of this tunnel\n" +
+                     "but have lost too many trying to fight it! It killed one of your men when you crashed, but together\n" +
+                      "we can free your friends and ours!";
+                    System.out.println(output);
+                    complete = true;
+                    nextScene = new HallwayScene();
+                }
+
+            }
+
             case FLEE -> {
                 System.out.println("You have chosen to flee like a coward!\n" +
                         " You consequently find yourself back at the cave mouth from whence you came.");

@@ -1,14 +1,10 @@
 package com.group5;
 
-import java.util.ArrayList;
-
 public class Player {
 
     private int playerHealth;
     private boolean isPlayerDead;
     private String inventory;
-    private int dexterity;
-    private int armor;
 
     //ctor
     public Player() {
