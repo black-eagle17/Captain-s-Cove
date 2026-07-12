@@ -82,6 +82,7 @@ public class caveScene implements Scene {
             case ATTACK -> {
                 System.out.println("You have chosen to ATTACK!");
                 itemCheck.evaluateInventory(player);
+
             }
             case SING -> {
                 System.out.println("You have chosen to sinnnnggggg....");

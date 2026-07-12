@@ -28,6 +28,7 @@ public class InputHandler {
             case "2f" -> GameEvent.FLEE;
             case "2g" -> GameEvent.SWING;
             case "2h" -> GameEvent.EXPLAIN;
+            case "ll" -> GameEvent.LOOT;
 
 
 

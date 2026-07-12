@@ -5,7 +5,9 @@ public class InventoryCheck {
     private int D20() {
         return (int) (Math.random() * 20);
     }
-    public void evaluateInventory(Player player) {
+
+
+    public int evaluateInventory(Player player) {
         String inventory = player.getInventory();
         int finalD20 = 0;
         if (player.getInventory().contains("Katana")) {
@@ -22,5 +24,16 @@ public class InventoryCheck {
             System.out.println("Blah blah blah " + finalD20);
             // add script and advance scene
         }
+        return finalD20;
     }
+public boolean diceResult(int finalD20){
+        boolean diceResult;
+        if(finalD20 < 10){
+            return diceResult = false;
+        }
+        else {
+            return diceResult = true;
+        }
+}
+
 }
