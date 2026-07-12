@@ -39,7 +39,7 @@ public class ShipScene implements Scene {
 
                 player.addItem("Katana");
                 complete = true;
-                nextScene = new caveScene(); // should be a level based on the previous choice. In this case, I only have one level, so I just return it
+                nextScene = new caveScene();  //player goes to cave scene
             }
             case INSPECT -> {
                 System.out.println(
@@ -50,7 +50,7 @@ public class ShipScene implements Scene {
                 );
                 player.addItem("Amulet");
                 complete = true;
-                nextScene = new caveScene(); // should be a level based on the previous choice. In this case, I only have one level, so I just return it
+                nextScene = new caveScene(); //player goes to cave scene
             }
             case EAT -> {
                 System.out.println(
@@ -59,7 +59,6 @@ public class ShipScene implements Scene {
                         "The sight of the moving water, Harry’s dead corpse, and what you now smell to be hot rotted fish all cause you to gag.\n " +
                         "You slip off of the side of the ship to your doom!\n"
                 );
-                //WE NEED TO ADD A PLAYER DEAD SCENE
                 player.setPlayerDead(); // player is dead, don't need to return a new scene
             }
             default -> System.out.println("Invalid key press");
