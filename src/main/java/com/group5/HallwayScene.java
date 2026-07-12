@@ -30,8 +30,10 @@ public class HallwayScene implements Scene{
         player.addItem(lootItem);
         System.out.println("You have aquired: " + lootItem);
 
-
+        complete = true;
+        nextScene = new FinalBossScene();
     }
+
 
     @Override
     public boolean isComplete() {
