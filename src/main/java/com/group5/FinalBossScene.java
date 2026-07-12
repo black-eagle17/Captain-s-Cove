@@ -52,7 +52,9 @@ public class FinalBossScene implements Scene{
              }
          }
      }
+     default -> System.out.println("Invalid key press");
  }
+
     }
 
     @Override
