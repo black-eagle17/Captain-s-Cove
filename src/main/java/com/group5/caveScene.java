@@ -78,8 +78,6 @@ public class caveScene implements Scene {
 
 
 
-                complete = true;
-                nextScene = new ShipScene(); // TODO: A NEW SCENE WILL BE ADDED HERE FROM SCRIPT THAT INCLUDES A PLAYER DICE ROLL AND GOBLIN ENCOUNTER
             }
             case ATTACK -> {
                 System.out.println("You have chosen to ATTACK!");
