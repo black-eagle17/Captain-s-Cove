@@ -21,9 +21,9 @@ public class ShipScene implements Scene {
             """
         );
 
-        _sceneState.getChoices().add("(G)rab the katana.");
-        _sceneState.getChoices().add("(I)nvestigate the Amulet");
-        _sceneState.getChoices().add("(E)at fish sandwich");
+        _sceneState.getChoices().add("(1e)Grab the katana.");
+        _sceneState.getChoices().add("(1f)Investigate the Amulet");
+        _sceneState.getChoices().add("(1g)Eat fish sandwich");
     }
 
     @Override
@@ -41,7 +41,7 @@ public class ShipScene implements Scene {
                 complete = true;
                 nextScene = new caveScene(); // should be a level based on the previous choice. In this case, I only have one level, so I just return it
             }
-            case INVESTIGATE -> {
+            case INSPECT -> {
                 System.out.println(
                     "You take the Amulet and see it glow. \n" +
                         "*Player earns +2 to performance and charisma!\n " +

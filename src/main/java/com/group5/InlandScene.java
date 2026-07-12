@@ -20,8 +20,8 @@ public class InlandScene implements Scene{
                         " You look to the cave, and think how deep could it possibly go\n"+
                         "What will you decide to do?\n");
 
-        _sceneState.getChoices().add("(S)Stay on the beach.");
-        _sceneState.getChoices().add("(K)Track down the juicy crab that entered the cave");
+        _sceneState.getChoices().add("(1c)Stay on the beach.");
+        _sceneState.getChoices().add("(1d)Track down the juicy crab that entered the cave");
     }
 
     @Override
