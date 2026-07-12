@@ -34,7 +34,23 @@ public class FinalBossScene implements Scene{
          player.setPlayerDead(); // player is dead, don't need to return a new scene
      }
      case CREW -> {
-        //TODO: ADD THE COMBAT FOR FINAL BOSS
+
+         switch (event){
+             case ATTEMPT -> {
+                 /*DICE ROLL ENCOUNTER pass/fail for breaking lock. either way player does not die
+                 if you succeed dice roll the lock breaks and your crew mates disperse throughout battlefield,
+                 if you fail your crew remains in the cage and you prepare to fight the crab
+                  */
+                 //TODO: ADD THE COMBAT FOR FINAL BOSS HERE
+             }
+             case READY -> {
+                 System.out.print("Saving your crew crosses your mind,\n" +
+                         "but you realize that staying alive yourslef must come first before saving your crew.\n"+
+                         "You brush the dirt off of your shirt and prepare for combat.\n"
+                         );
+                 //TODO: ADD THE COMBAT FOR FINAL BOSS HERE
+             }
+         }
      }
  }
     }

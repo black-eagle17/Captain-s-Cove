@@ -31,6 +31,9 @@ public class InputHandler {
             case "ll" -> GameEvent.LOOT;
             case "3a" -> GameEvent.HOLE;
             case "3b" -> GameEvent.CREW;
+            case "4a" -> GameEvent.ATTEMPT;
+            case "4b" -> GameEvent.READY;
+
 
 
 
