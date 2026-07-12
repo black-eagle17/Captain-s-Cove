@@ -119,6 +119,35 @@ public class caveScene implements Scene {
                     nextScene = new caveScene(); //TODO: Should be hallway scene
                 }
             }
+
+            //cases for the goblin
+            case SWING -> {
+                System.out.println("You have chosen to SWING YOUR SWORD!");
+                int numRoll = itemCheck.evaluateInventory(player);
+                if(numRoll < 10){
+                    //output the player rolled number and set player dead
+                    String output ="You lunge forward and slip on the damp cave floor, falling backwards as if there were a banana peel. You look like a fool. As youre on the ground, the Goblins swarm you.";
+
+                    System.out.println(output);
+                    player.setPlayerDead();
+                }
+                else {
+                    String output =
+                    "You're stronger than a toddler!\n" +
+                    "You lunge at the Goblin closest and strike true, knocking it back a few feet to the ground.\n"+
+                    "It didn’t take much, they're tiny guys. The other goblins  look at you and revere you as the strongest\n"+
+                    "in the room. The goblin on the ground crawls towards you, “Oh please, help us defeat the beast beyond\n"+
+                    "this door! We have been able to keep it contained but have lost too many trying to fight it! It killed\n"+
+                    "one of your men when you crashed, but together we can free your friends and ours!";
+                    _sceneState.setStory(output);
+                    nextScene = new HallwayScene();
+                }
+            }
+
+            case EXPLAIN ->{
+
+            }
+
             case FLEE -> {
                 System.out.println("You have chosen to flee like a coward!\n" +
                         " You consequently find yourself back at the cave mouth from whence you came.");
