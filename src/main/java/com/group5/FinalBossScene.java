@@ -30,7 +30,7 @@ public class FinalBossScene implements Scene{
  switch(event) {
      case HOLE -> {
          System.out.println("In an act of pure desperation you roll towards the hole and succesfully drop in.\n"+
-                 "You are then crushed by an overwhelmingly powerful river of sand.(PLAYER DIES!");
+                 "You are then crushed by an overwhelmingly powerful river of sand.(PLAYER DIES!)");
          player.setPlayerDead(); // player is dead, don't need to return a new scene
      }
      case CREW -> {
