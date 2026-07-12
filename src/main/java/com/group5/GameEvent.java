@@ -20,5 +20,7 @@ public enum GameEvent {
     EXPLAIN,
     LOOT,
     HOLE,
-    CREW
+    CREW,
+    ATTEMPT,
+    READY
 }
