@@ -97,7 +97,8 @@ public class caveScene implements Scene {
                     "Your friends are just through here. But beware, they are guarded by a beast. We are sworn not to intrude on it,\n" +
                     "lest it come for our own. But perhaps we can help you defeat it.\n";
                     _sceneState.setStory(output);
-                    nextScene = new HallwayScene(); //TODO: Should be hallway scene
+                    complete=true;
+                    nextScene = new HallwayScene();
                 }
             }
 
@@ -116,6 +117,7 @@ public class caveScene implements Scene {
                     "A large whirlpool begins to form in front of you. Your friends are just through here. But beware, they\n" +
                     "are guarded by a beast. We are sworn not to intrude on it, lest it come for our own. But perhaps we can help you defeat it.\n";
                     _sceneState.setStory(output);
+                    complete = true;
                     nextScene = new HallwayScene();
                 }
             }
@@ -140,6 +142,7 @@ public class caveScene implements Scene {
                     "this door! We have been able to keep it contained but have lost too many trying to fight it! It killed\n"+
                     "one of your men when you crashed, but together we can free your friends and ours!";
                     _sceneState.setStory(output);
+                    complete = true;
                     nextScene = new HallwayScene();
                 }
             }
