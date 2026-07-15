@@ -1,12 +1,12 @@
 package com.group5;
 
-public class FinalBossScene implements Scene{
+public class FinalBossIntroScene implements Scene{
     private SceneState _sceneState;
     private boolean complete;
     private Scene nextScene;
 
 
-    public FinalBossScene(){
+    public FinalBossIntroScene(){
         this._sceneState = new SceneState();
         _sceneState.setSceneName("Final Boss Scene");
         _sceneState.setStory(
@@ -14,7 +14,7 @@ public class FinalBossScene implements Scene{
                         "You enter a large coliseum and are stunned by the roar of an overwhelmingly large crowd of spectators.\n" +
                 "“Where the hell am I ?” You think to yourself. But you are quickly interrupted by a thunderous voice.\n"+
                 "“Welcome traveler! It is nice to see you have made it to tonight’s festivities”.\n"+
-        "“HELP! OVER HERE!” Your head is spinning as you quicky surveil the room and notice some of your crew mates had been captured.\n"+
+        "“HELP! OVER HERE!” Your head is spinning as you quickly surveil the room and notice some of your crew mates had been captured.\n"+
         "The ground rumbles with such force it radiates up your legs and your teeth begin to chatter.\n"+
                 "A GIANT crab bursts from the dirt and snaps its large claws with a deafening boom.\n" +
                 "Your eyes dart between your crewmates huddled together, and the hole in the ground where the crab emerged; could this be the way out?\n" +
@@ -29,7 +29,7 @@ public class FinalBossScene implements Scene{
     public void handleEvent(GameEvent event, Player player) {
  switch(event) {
      case HOLE -> {
-         System.out.println("In an act of pure desperation you roll towards the hole and succesfully drop in.\n"+
+         System.out.println("In an act of pure desperation you roll towards the hole and successfully drop in.\n"+
                  "You are then crushed by an overwhelmingly powerful river of sand.(PLAYER DIES!)");
          player.setPlayerDead(); // player is dead, don't need to return a new scene
      }
@@ -45,7 +45,7 @@ public class FinalBossScene implements Scene{
              }
              case READY -> {
                  System.out.print("Saving your crew crosses your mind,\n" +
-                         "but you realize that staying alive yourslef must come first before saving your crew.\n"+
+                         "but you realize that staying alive yourself must come first before saving your crew.\n"+
                          "You brush the dirt off of your shirt and prepare for combat.\n"
                          );
                  //TODO: ADD THE COMBAT FOR FINAL BOSS HERE
