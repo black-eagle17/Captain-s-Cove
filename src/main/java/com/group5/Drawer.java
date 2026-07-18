@@ -21,8 +21,7 @@ public class Drawer {
         // Player and enemy health stats
         display.repeat("─", WIDTH).append("\n\n").append(gameStatus("Player", _player.getHp(), 100, _player.getInventory())); // player and enemy status
         if(_sceneState.getEnemy() != null) {
-           //TODO: get an enemy object and t
-            //display.append(); //use gameStatus() to print enemy info if applicable
+            display.append(gameStatus(_sceneState.getEnemy(), 100, 100, "Massive Iron Claw")); //use gameStatus() to print enemy info if applicable
         }
         display.repeat("─", WIDTH).append("\n\n");
 

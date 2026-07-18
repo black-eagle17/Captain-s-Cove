@@ -22,6 +22,7 @@ public class FinalBossIntroScene implements Scene{
         );
         _sceneState.getChoices().add("(3a)Dash towards the hole in the ground");
         _sceneState.getChoices().add("(3b)Dash towards your crewmates");
+        _sceneState.setEnemy("CRAB");
 
     }
 
@@ -39,23 +40,28 @@ public class FinalBossIntroScene implements Scene{
                         "Your crew mates are locked in a small rusty cage with a worn pad lock.\n " +
                         "You spot a small boulder next to the cage that could potentially break them free.\n" +
                         "Knowing there is an angry murderous crab behind you, you have to decide fast. \n");
-         switch (event){
-             case ATTEMPT -> {
+
+                _sceneState.getChoices().clear();
+                _sceneState.getChoices().add("(3a)Attempt to fight the crab");
+                _sceneState.getChoices().add("(3b) do something else");
+
+     }
+    case ATTEMPT -> {
                  /*DICE ROLL ENCOUNTER pass/fail for breaking lock. either way player does not die
                  if you succeed dice roll the lock breaks and your crew mates disperse throughout battlefield,
                  if you fail your crew remains in the cage and you prepare to fight the crab
                   */
                  //TODO: ADD THE COMBAT FOR FINAL BOSS HERE
-             }
-             case READY -> {
+
+    }
+    case READY -> {
                  System.out.print("Saving your crew crosses your mind,\n" +
                          "but you realize that staying alive yourself must come first before saving your crew.\n"+
                          "You brush the dirt off of your shirt and prepare for combat.\n"
                          );
                  //TODO: ADD THE COMBAT FOR FINAL BOSS HERE
+
              }
-         }
-     }
      default -> System.out.println("Invalid key press");
  }
 
