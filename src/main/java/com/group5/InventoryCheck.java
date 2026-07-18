@@ -2,7 +2,7 @@ package com.group5;
 
 public class InventoryCheck {
     private Dice dice; //dice object that contains the roll method
-
+    private int initialRoll;
     //constructor
     public InventoryCheck(){
         this.dice = new Dice(); // init dice obj
@@ -10,21 +10,37 @@ public class InventoryCheck {
 
 //below is the simplified method to return a dice roll. the conditional logic will be added outside of this method
 
-    public int initialRoll(Player player) {
+    public void initialRoll() {
 
-        int initialRoll = dice.rollDice();
+         initialRoll = dice.rollDice();
+    }
 
-       return initialRoll; }
 
-
-    public int amuletBonus(Player player, int initialRoll){
+    public int amuletBonus(Player player){
         String inventory = player.getInventory(); // grab the string that contains the list of player inventory
-        int finalD20 = 0;
+        initialRoll();
+        int finalD20 = initialRoll;
+
 
         if (inventory.contains("Amulet")) {
-            finalD20 = initialRoll + 3;// get the random dice roll num and add 3 because of the Amulet
-        } else {
-            finalD20 = initialRoll;
+            finalD20 = finalD20 + 3;// get the random dice roll num and add 3 because of the Amulet
+        }
+
+        System.out.println("You rolled -> " + initialRoll);
+        if(finalD20 != initialRoll){
+            System.out.println("with loot bonus -> +3");
+        }
+        System.out.println("for a total -> " + finalD20 );
+
+        return finalD20;
+    }
+    public int swordBonus(Player player){
+        String inventory = player.getInventory(); // grab the string that contains the list of player inventory
+        initialRoll();
+        int finalD20 = initialRoll;
+
+        if (inventory.contains("Katana")) {
+            finalD20 = finalD20 + 3;// get the random dice roll num and add 3 because of the Amulet
         }
 
         System.out.println("You rolled -> " + initialRoll);
