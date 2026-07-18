@@ -8,20 +8,27 @@ public class InventoryCheck {
         this.dice = new Dice(); // init dice obj
     }
 
-    public int evaluateInventory(Player player) {
+//below is the simplified method to return a dice roll. the conditional logic will be added outside of this method
+
+    public int initialRoll(Player player) {
+
+        int initialRoll = dice.rollDice();
+
+       return initialRoll; }
+
+
+    public int amuletBonus(Player player, int initialRoll){
         String inventory = player.getInventory(); // grab the string that contains the list of player inventory
         int finalD20 = 0;
-        int temp_roll = dice.rollDice();
-        if (inventory.contains("Katana")) {
-            finalD20 = temp_roll + 3; // get the random dice roll num and add 3 because of the katana
-        }
-        else if (inventory.contains("Amulet")) {
-            finalD20 = temp_roll + 3;// get the random dice roll num and add 3 because of the Amulet
+
+        if (inventory.contains("Amulet")) {
+            finalD20 = initialRoll + 3;// get the random dice roll num and add 3 because of the Amulet
         } else {
-            finalD20 = temp_roll;
+            finalD20 = initialRoll;
         }
-        System.out.println("You rolled -> " + temp_roll);
-        if(finalD20 != temp_roll){
+
+        System.out.println("You rolled -> " + initialRoll);
+        if(finalD20 != initialRoll){
             System.out.println("with loot bonus -> +3");
         }
         System.out.println("for a total -> " + finalD20);
@@ -29,3 +36,12 @@ public class InventoryCheck {
         return finalD20;
     }
 }
+
+
+
+
+
+
+
+
+

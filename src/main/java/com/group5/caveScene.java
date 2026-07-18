@@ -81,7 +81,8 @@ public class caveScene implements Scene {
             }
             case ATTACK -> {
                 System.out.println("You have chosen to ATTACK!");
-                int numRoll = itemCheck.evaluateInventory(player);
+                int numRoll = itemCheck.initialRoll(player);
+
                 if(numRoll < 10){
                     //output the player rolled number and set player dead
                     String output ="You lunge at the Siren and slip on the wet stones, hitting your head and being dragged into the dark water.";

@@ -34,7 +34,11 @@ public class FinalBossIntroScene implements Scene{
          player.setPlayerDead(); // player is dead, don't need to return a new scene
      }
      case CREW -> {
-
+                System.out.println("\"You drop to the floor and log over to your crew.\n" +
+                        "The massive claw whizzes by your head, and snaps with a lethal force.\n" +
+                        "Your crew mates are locked in a small rusty cage with a worn pad lock.\n " +
+                        "You spot a small boulder next to the cage that could potentially break them free.\n" +
+                        "Knowing there is an angry murderous crab behind you, you have to decide fast. \n");
          switch (event){
              case ATTEMPT -> {
                  /*DICE ROLL ENCOUNTER pass/fail for breaking lock. either way player does not die
