@@ -33,15 +33,6 @@ public class InputHandler {
             case "3b" -> GameEvent.CREW;
             case "4a" -> GameEvent.ATTEMPT;
             case "4b" -> GameEvent.READY;
-
-
-
-
-
-
-
-
-
             default -> GameEvent.UNKNOWN;
 
         };
