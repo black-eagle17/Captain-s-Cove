@@ -2,26 +2,49 @@ package com.group5;
 
 public class InventoryCheck {
     private Dice dice; //dice object that contains the roll method
-
+    private int initialRoll;
     //constructor
     public InventoryCheck(){
         this.dice = new Dice(); // init dice obj
     }
 
-    public int evaluateInventory(Player player) {
+//below is the simplified method to return a dice roll. the conditional logic will be added outside of this method
+
+    public void initialRoll() {
+
+         initialRoll = dice.rollDice();
+    }
+
+
+    public int amuletBonus(Player player){
         String inventory = player.getInventory(); // grab the string that contains the list of player inventory
-        int finalD20 = 0;
-        int temp_roll = dice.rollDice();
+        initialRoll();
+        int finalD20 = initialRoll;
+
+
+        if (inventory.contains("Amulet")) {
+            finalD20 = finalD20 + 3;// get the random dice roll num and add 3 because of the Amulet
+        }
+
+        System.out.println("You rolled -> " + initialRoll);
+        if(finalD20 != initialRoll){
+            System.out.println("with loot bonus -> +3");
+        }
+        System.out.println("for a total -> " + finalD20 );
+
+        return finalD20;
+    }
+    public int swordBonus(Player player){
+        String inventory = player.getInventory(); // grab the string that contains the list of player inventory
+        initialRoll();
+        int finalD20 = initialRoll;
+
         if (inventory.contains("Katana")) {
-            finalD20 = temp_roll + 3; // get the random dice roll num and add 3 because of the katana
+            finalD20 = finalD20 + 3;// get the random dice roll num and add 3 because of the Amulet
         }
-        else if (inventory.contains("Amulet")) {
-            finalD20 = temp_roll + 3;// get the random dice roll num and add 3 because of the Amulet
-        } else {
-            finalD20 = temp_roll;
-        }
-        System.out.println("You rolled -> " + temp_roll);
-        if(finalD20 != temp_roll){
+
+        System.out.println("You rolled -> " + initialRoll);
+        if(finalD20 != initialRoll){
             System.out.println("with loot bonus -> +3");
         }
         System.out.println("for a total -> " + finalD20);
@@ -29,3 +52,12 @@ public class InventoryCheck {
         return finalD20;
     }
 }
+
+
+
+
+
+
+
+
+

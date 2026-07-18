@@ -29,9 +29,10 @@ public class HallwayScene implements Scene{
         String lootItem =  goldenChest.determineLoot(goldenChest.diceRoll());
         player.addItem(lootItem);
         System.out.println("You have aquired: " + lootItem);
+        System.out.println(" ");
 
         complete = true;
-        nextScene = new FinalBossScene();
+        nextScene = new FinalBossIntroScene();
     }
 
 

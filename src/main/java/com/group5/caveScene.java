@@ -81,7 +81,8 @@ public class caveScene implements Scene {
             }
             case ATTACK -> {
                 System.out.println("You have chosen to ATTACK!");
-                int numRoll = itemCheck.evaluateInventory(player);
+                int numRoll = itemCheck.swordBonus(player);
+
                 if(numRoll < 10){
                     //output the player rolled number and set player dead
                     String output ="You lunge at the Siren and slip on the wet stones, hitting your head and being dragged into the dark water.";
@@ -104,7 +105,7 @@ public class caveScene implements Scene {
 
             case SING -> {
                 System.out.println("You have chosen to sinnnnggggg....");
-                int numRoll = itemCheck.evaluateInventory(player);
+                int numRoll = itemCheck.amuletBonus(player);
                 if(numRoll < 10){
                     //output the player rolled number and set player dead
                     String output ="You clear your throat and sing. Terribly. The Mermaid in front of you sings and their amulet expels a purple shadow that engulfs you. Your skin turns to ash and your dead skeleton hits the floor ";
@@ -125,7 +126,7 @@ public class caveScene implements Scene {
             //cases for the goblin
             case SWING -> {
                 System.out.println("You have chosen to SWING YOUR SWORD!");
-                int numRoll = itemCheck.evaluateInventory(player);
+                int numRoll = itemCheck.swordBonus(player);
                 if(numRoll < 10){
                     //output the player rolled number and set player dead
                     String output ="You lunge forward and slip on the damp cave floor, falling backwards as if there were a banana peel. You look like a fool. As youre on the ground, the Goblins swarm you.";
@@ -149,7 +150,7 @@ public class caveScene implements Scene {
 
             case EXPLAIN ->{
                 System.out.println("You have chosen to EXPLAIN YOUR SELF!");
-                int numRoll = itemCheck.evaluateInventory(player);
+                int numRoll = itemCheck.amuletBonus(player);
                 if(numRoll < 10){
                     //output the player rolled number and set player dead
                     String output ="You lunge forward and slip on the damp cave floor, falling backwards as if there were a banana peel. You look like a fool. As youre on the ground, the Goblins swarm you.";
