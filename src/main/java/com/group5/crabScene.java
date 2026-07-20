@@ -9,7 +9,8 @@ public class CrabScene implements Scene {
 
     public CrabScene() {
         this._sceneState = new SceneState();
-        _sceneState.setSceneName("Ship scene");
+        _sceneState.setSceneName("Boss Crab Scene");
+        _sceneState.setEnemy("CRAB");
         _sceneState.setStory(
             """
                 CRAB prompt, not sure what to put
@@ -17,7 +18,7 @@ public class CrabScene implements Scene {
         );
 
         _sceneState.getChoices().add("(1e) Fight crab");
-        _sceneState.getChoices().add("(1f) use loot");
+        _sceneState.getChoices().add("(1f) Use loot");
     }
 
     @Override
