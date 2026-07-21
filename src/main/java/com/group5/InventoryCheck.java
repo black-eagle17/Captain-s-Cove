@@ -3,12 +3,15 @@ package com.group5;
 public class InventoryCheck {
     private Dice dice; //dice object that contains the roll method
     private int initialRoll;
+    //public static ArrayList<Integer> _inventory = new ArrayList<Integer>()
     //constructor
     public InventoryCheck(){
         this.dice = new Dice(); // init dice obj
     }
 
 //below is the simplified method to return a dice roll. the conditional logic will be added outside of this method
+    //public void removeItem
+
 
     public void initialRoll() {
 
@@ -52,12 +55,3 @@ public class InventoryCheck {
         return finalD20;
     }
 }
-
-
-
-
-
-
-
-
-

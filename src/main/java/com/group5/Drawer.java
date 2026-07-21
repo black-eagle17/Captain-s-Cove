@@ -3,7 +3,7 @@ package com.group5;
 
 public class Drawer {
     //draws ui to the screen
-    public void draw(SceneState _sceneState, Player _player) {
+    public void draw(SceneState _sceneState, Player _player, Enemy _enemy) {
         final int WIDTH = 60; // wrap text after 60 characters
         StringBuilder display = new StringBuilder(); // final output string
 
@@ -20,8 +20,8 @@ public class Drawer {
 
         // Player and enemy health stats
         display.repeat("─", WIDTH).append("\n\n").append(gameStatus("Player", _player.getHp(), 100, _player.getInventory())); // player and enemy status
-        if(_sceneState.getEnemy() != null) {
-            display.append(gameStatus(_sceneState.getEnemy(), 100, 100, "Massive Iron Claw")); //use gameStatus() to print enemy info if applicable
+        if(_enemy != null) {
+            display.append(gameStatus(_enemy.getName(), _enemy.getEnemyHp(), 100, _enemy.getInventory())); //use gameStatus() to print enemy info if applicable
         }
         display.repeat("─", WIDTH).append("\n\n");
 

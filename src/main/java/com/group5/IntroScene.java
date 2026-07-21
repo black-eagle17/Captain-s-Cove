@@ -21,7 +21,7 @@ public class IntroScene implements Scene{
                         Hunger pangs in your stomach and you
                         remember again that you haven’t eaten in days.
                         Time is of the essence, use it wisely.
-                        
+
                         """
         );
         _sceneState.getChoices().add("(1a) Travel inland and search for food.");
@@ -29,7 +29,7 @@ public class IntroScene implements Scene{
     }
 
     @Override
-    public void handleEvent(GameEvent event, Player player) {
+    public void handleEvent(GameEvent event, Player player, Enemy _enemy) {
         switch (event){
             case TRAVEL ->{
                 System.out.println("You have chosen to travel\n");
