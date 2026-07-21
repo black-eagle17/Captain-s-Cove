@@ -25,7 +25,7 @@ public class HallwayScene implements Scene{
     }
 
     @Override
-    public void handleEvent(GameEvent event, Player player) {
+    public void handleEvent(GameEvent event, Player player, Enemy _enemy) {
         String lootItem =  goldenChest.determineLoot(goldenChest.diceRoll());
         player.addItem(lootItem);
         System.out.println("You have aquired: " + lootItem);

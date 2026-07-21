@@ -24,7 +24,7 @@ public class CrabScene implements Scene {
   }
 
   @Override
-  public void handleEvent(GameEvent event, Player player) {
+  public void handleEvent(GameEvent event, Player player, Enemy _enemy) {
     switch (event) {
       case ATTACK_CRAB -> {
         // should have some more prompts
@@ -36,7 +36,24 @@ public class CrabScene implements Scene {
         // roll dice for the enemy
         int enemyRoll = _dice.rollDice();
 
-        // both entity should deal damage (What is the purpose of the dice roll?)
+        System.out.println("Player rolled a " + playerRoll);
+        System.out.println("Enemy rolled a " + enemyRoll);
+
+        //subtract health from enemy
+        _crab.dealDamage(playerRoll);
+
+        //subtract health from player
+        player.dealDamage(enemyRoll);
+
+        //check if player or enemy won/died
+        if(player.getHp() <=0 && enemy.getEnemyHp() > 0 )
+        {
+            //should set scene to a losing scene
+        }
+        else if(player.getHp()>0 && enemy.getEnemyHp()<=0){
+           // should set scene to a winning scene
+        }
+
 
         return;
       }

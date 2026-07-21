@@ -6,6 +6,7 @@ public class Application {
     private Scene currScene;
     private GameState _state;
     private Player player;
+    private Enemy _enemy;
     private Drawer _drawer;
 
     //ctor

@@ -27,7 +27,7 @@ public class FinalBossIntroScene implements Scene {
   }
 
   @Override
-  public void handleEvent(GameEvent event, Player player) {
+  public void handleEvent(GameEvent event, Player player, Enemy _enemy) {
     switch (event) {
       case HOLE -> {
         System.out.println("In an act of pure desperation you roll towards the hole and successfully drop in.\n" +

@@ -27,7 +27,7 @@ public class ShipScene implements Scene {
     }
 
     @Override
-    public void handleEvent(GameEvent event, Player player) {
+    public void handleEvent(GameEvent event, Player player, Enemy _enemy) {
         switch (event) {
             case GRAB -> {
                 System.out.println(

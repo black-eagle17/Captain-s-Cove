@@ -24,7 +24,7 @@ public class CrabScene implements Scene {
   }
 
   @Override
-  public void handleEvent(GameEvent event, Player player) {
+  public void handleEvent(GameEvent event, Player player, Enemy _enemy) {
     switch (event) {
       case ATTACK_CRAB -> {
         // should have some more prompts

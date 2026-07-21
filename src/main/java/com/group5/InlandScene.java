@@ -25,7 +25,7 @@ public class InlandScene implements Scene{
     }
 
     @Override
-    public void handleEvent(GameEvent event, Player player) {
+    public void handleEvent(GameEvent event, Player player, Enemy _enemy) {
         switch (event){
             case STAY ->{
                 System.out.println("\n" +
