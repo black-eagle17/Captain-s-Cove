@@ -1,7 +1,7 @@
 package com.group5;
 
 public class LootBox {
-    public String [] loot = {"-> helmet", "-> boots", "-> Vial of blue liquid"};
+    public String [] loot = {"-> helmet", "-> boots", "-> vial of blue liquid"};
 
     public int diceRoll(){
         return (int) (Math.random() * 20);
