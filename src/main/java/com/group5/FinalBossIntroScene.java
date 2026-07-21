@@ -23,7 +23,6 @@ public class FinalBossIntroScene implements Scene {
             "You look up again to see one of the massive claws swinging towards you for a strike!\n");
     _sceneState.getChoices().add("(3a)Dash towards the hole in the ground");
     _sceneState.getChoices().add("(3b)Dash towards your crewmates");
-    _sceneState.getChoices().add("(4a)Attempt to save your crewmates");
 
   }
 
@@ -36,14 +35,16 @@ public class FinalBossIntroScene implements Scene {
         player.setPlayerDead(); // player is dead, don't need to return a new scene
       }
       case CREW -> {
-        System.out.println("\"You drop to the floor and log over to your crew.\n" +
+        _sceneState.setStory("You drop to the floor and log over to your crew.\n" +
             "The massive claw whizzes by your head, and snaps with a lethal force.\n" +
             "Your crew mates are locked in a small rusty cage with a worn pad lock.\n " +
             "You spot a small boulder next to the cage that could potentially break them free.\n" +
             "Knowing there is an angry murderous crab behind you, you have to decide fast. \n");
 
-        nextScene = new CrabScene();
-        complete = true;
+        _sceneState.getChoices().clear();
+        _sceneState.getChoices().add("(4a)Attempt to free your crewmates");
+        _sceneState.getChoices().add("(4b)Ignore crewmates and prepare to fight the crab");
+
       }
       case ATTEMPT -> {
         System.out.println("You chose to swing at the lock.");
@@ -58,13 +59,15 @@ public class FinalBossIntroScene implements Scene {
         else if (roll < 10) {
           System.out.println("The lock did not break.");
         }
-        // TODO: ADD THE COMBAT FOR FINAL BOSS HERE
+        nextScene = new CrabScene();
+        complete = true;
       }
       case READY -> {
         System.out.print("Saving your crew crosses your mind,\n" +
             "but you realize that staying alive yourself must come first before saving your crew.\n" +
             "You brush the dirt off of your shirt and prepare for combat.\n");
-        // TODO: ADD THE COMBAT FOR FINAL BOSS HERE
+        nextScene = new CrabScene();
+        complete = true;
 
       }
       default -> System.out.println("Invalid key press");
