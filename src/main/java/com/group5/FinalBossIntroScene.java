@@ -23,6 +23,7 @@ public class FinalBossIntroScene implements Scene {
             "You look up again to see one of the massive claws swinging towards you for a strike!\n");
     _sceneState.getChoices().add("(3a)Dash towards the hole in the ground");
     _sceneState.getChoices().add("(3b)Dash towards your crewmates");
+    _sceneState.getChoices().add("(4a)Attempt to save your crewmates");
 
   }
 
@@ -45,13 +46,18 @@ public class FinalBossIntroScene implements Scene {
         complete = true;
       }
       case ATTEMPT -> {
-        /*
-         * DICE ROLL ENCOUNTER pass/fail for breaking lock. either way player does not
-         * die
-         * if you succeed dice roll the lock breaks and your crew mates disperse
-         * throughout battlefield, add string free crew to inventory
-         * if you fail your crew remains in the cage and you prepare to fight the crab
-         */
+        System.out.println("You chose to swing at the lock.");
+        Dice dice = new Dice();
+        int roll = dice.rollDice();
+
+        System.out.println("you swing at the lock");
+        System.out.println("you rolled a " + roll + ".");
+        if (roll >= 10) {
+          System.out.println("You shattered the lock.");
+        }
+        else if (roll < 10) {
+          System.out.println("The lock did not break.");
+        }
         // TODO: ADD THE COMBAT FOR FINAL BOSS HERE
       }
       case READY -> {
