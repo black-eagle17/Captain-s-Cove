@@ -24,7 +24,7 @@ public class caveScene implements Scene {
     }
 
     @Override
-    public void handleEvent(GameEvent event, Player playerm, Enemy _enemy) {
+    public void handleEvent(GameEvent event, Player player, Enemy _enemy) {
         switch (event) {
             case LEFT -> {
                 System.out.println(
