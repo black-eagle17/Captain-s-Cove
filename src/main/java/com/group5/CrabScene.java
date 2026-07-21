@@ -52,7 +52,6 @@ public class CrabScene implements Scene {
         //subtract health from player
         player.dealDamage(enemyRoll + crabClawRoll);
 
-        checkLootItem()
 
         //check if player or enemy won/died
         if(player.getHp() <=0 && crab.getEnemyHp() > 0 )
@@ -89,15 +88,6 @@ public class CrabScene implements Scene {
     return _sceneState;
   }
 
-  public void checkLootItem(Player player, int amt){
-      if(!didUseLoot){
-          // check to see what loot we have and apply bonus
-         // depending on item
-         if(player.getInventory().contains("helmet")){
-             System.out.println("You used a helmet, next hit from enemy will be decreased by +5 hp");
-             player.blockDamage();
-         }
-      }
-     return;
+
   }
-}
+
