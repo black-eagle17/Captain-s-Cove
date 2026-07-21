@@ -6,8 +6,9 @@ public class Player {
   private boolean isPlayerDead;
   private String inventory;
   private int lootPoints;
-  private boolean didUseLoot;
+  private boolean wantToUseLoot;
   private boolean canUseLoot;
+  private  int extraDmg;
 
   // ctor
   public Player() {
@@ -15,8 +16,9 @@ public class Player {
     this.isPlayerDead = false;
     this.inventory = "";
     this.lootPoints = 0;
-    this.didUseLoot = false;
+    this.wantToUseLoot = false;
     this.canUseLoot = true;
+    this.extraDmg = 0;
   }
 
   // check the isPlayerDead flag and return its value
@@ -38,10 +40,9 @@ public class Player {
   public void dealDamage(int enemyDmgAmt) {
     if (!isPlayerDead()) {
         // check if we haven't use loot item yet then deal damage based on loot
-      if(didUseLoot && canUseLoot){
+      if(wantToUseLoot && canUseLoot){
           lootPoints = determineLoot(enemyDmgAmt);
-          playerHealth+=lootPoints;
-          System.out.println("You got " + lootPoints + " loot points which will aid in your fight");
+          playerHealth -= lootPoints;
           canUseLoot = false;
       }else{
           //just do a regular damage
@@ -52,8 +53,16 @@ public class Player {
 
   //make sure we use loot item once
   public void oneShotLootItem(){
-      didUseLoot = true;
+      wantToUseLoot = true;
   }
+  // deals extra damage to enemy based on vial of blue liquid
+    public int extraDmg(){
+      if(wantToUseLoot)
+      {
+      return extraDmg;
+      }
+      else return 0;
+    }
 
   // return the players inventory
   public String getInventory() {
@@ -66,13 +75,15 @@ public class Player {
   }
 
 
-  private int determineLoot(int dmgAmt){
+  private int determineLoot(int dmgAmt){//TODO:add item prompts based on the inventory and what we used
       if(inventory.contains("helmet")){
-          lootPoints = 5;
+      lootPoints = dmgAmt - 8;
       }else if(inventory.contains("vial of blue liquid")){
-          lootPoints = 10;
-      }else if(inventory.contains("boot")){
+          extraDmg = 10;
           lootPoints = dmgAmt;
+          System.out.println("You will damage the enemy by an extra 10 points");
+      }else if(inventory.contains("boots")){
+          lootPoints = 0;
       }
 
 

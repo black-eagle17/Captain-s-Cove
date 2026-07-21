@@ -17,7 +17,7 @@ public class CrabScene implements Scene {
             """);
 
     _sceneState.getChoices().add("(ff) Fight crab");
-    _sceneState.getChoices().add("(1f) Use loot");
+    _sceneState.getChoices().add("(ll) Use loot");
     _dice = new Dice();
   }
 
@@ -32,42 +32,47 @@ public class CrabScene implements Scene {
         int playerRoll = _dice.rollDice();
 
         // roll dice for the enemy
-        int enemyRoll = _dice.rollDice();
+        int crabRoll = _dice.rollDice();
 
         System.out.println("Player rolled a " + playerRoll);
-        System.out.println("Enemy rolled a " + enemyRoll);
+        System.out.println("Crab rolled a " + crabRoll);
 
-        //subtract health from enemy
-        crab.dealDamage(playerRoll);
 
-        //determine if enemy is using special capabalities
+
+
+        //determine if enemy is using special capabalities..need to print out the statement if crab used the claw
         int crabClawRoll = _dice.rollCrabDice();
         if(crabClawRoll > 30)
         {
             crabClawRoll = 8;
+            System.out.println("Crab used Massive Iron Claw for +8 damage");
         }else{
             crabClawRoll =0;
         }
-
         //subtract health from player
-        player.dealDamage(enemyRoll + crabClawRoll);
+        player.dealDamage(crabRoll + crabClawRoll);
+
+        //subtract health from enemy
+        crab.dealDamage(player.extraDmg() + playerRoll);
 
 
         //check if player or enemy won/died
         if(player.getHp() <=0 && crab.getEnemyHp() > 0 )
         {
             //should set scene to a losing scene
+          player.setPlayerDead();
         }
         else if(player.getHp()>0 && crab.getEnemyHp()<=0){
            // should set scene to a winning scene
+          System.out.println("Winnner");
         }
 
 
         return;
       }
-      case USE_LOOT -> {
-        System.out.println(
-            "You take the Amulet and see it glow.\n ");
+      case LOOT -> {
+        player.oneShotLootItem();
+        System.out.println("Great choice, using loot item");
       }
       default -> System.out.println("Invalid key press");
     }
