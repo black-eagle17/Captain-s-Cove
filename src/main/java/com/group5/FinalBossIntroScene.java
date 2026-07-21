@@ -49,11 +49,10 @@ public class FinalBossIntroScene implements Scene {
          * DICE ROLL ENCOUNTER pass/fail for breaking lock. either way player does not
          * die
          * if you succeed dice roll the lock breaks and your crew mates disperse
-         * throughout battlefield,
+         * throughout battlefield, add string free crew to inventory
          * if you fail your crew remains in the cage and you prepare to fight the crab
          */
         // TODO: ADD THE COMBAT FOR FINAL BOSS HERE
-
       }
       case READY -> {
         System.out.print("Saving your crew crosses your mind,\n" +

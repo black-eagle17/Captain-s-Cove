@@ -7,7 +7,7 @@ public class SceneState {
     private final String title = "CAPTAIN'S COVE ";
     private String sceneName;
     private String _story;
-    private String _enemy;
+    private Enemy _enemy;
     private ArrayList<String> _choices;
 
     public SceneState(){
