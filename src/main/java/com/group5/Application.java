@@ -16,6 +16,8 @@ public class Application {
         this._state = GameState.RUNNING;
         this.player = new Player();
         this._drawer = new Drawer();
+        this._enemy = new Enemy("NO ENEMY");
+
     }
 
     //main game loop that advances level and handle user input
@@ -23,7 +25,7 @@ public class Application {
 
         //actual game loop
         while (_state == GameState.RUNNING) {
-            _drawer.draw(currScene.getSceneState(),player); // this method is responsible for drawing our UI, it takes the current scene [Scene State] and Player obj. (basically, what are the stats looking like after each action);
+            _drawer.draw(currScene.getSceneState(),player, _enemy); // this method is responsible for drawing our UI, it takes the current scene [Scene State] and Player obj. (basically, what are the stats looking like after each action);
 
             GameEvent event = inputHandler.readEvent(); //grab input from the keyboard and decode which key was pressed and then turn it into an event
 
@@ -34,7 +36,7 @@ public class Application {
             }
 
             //dispatch event to current level if we did not quit the game
-            currScene.handleEvent(event, player);
+            currScene.handleEvent(event, player, _enemy);
 
             //check that we met the criteria for completing the scene or player died
             if(player.isPlayerDead()){

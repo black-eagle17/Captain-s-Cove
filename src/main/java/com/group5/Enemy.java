@@ -11,7 +11,7 @@ public class Enemy {
     this.name = name;
     this.enemyHealth = 100;
     this.isEnemyDead = false;
-    this.inventory = "";
+    this.inventory = "Massive Iron Claw";
   }
 
   // check the isEnemyDead flag and return its value

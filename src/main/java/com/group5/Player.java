@@ -5,6 +5,7 @@ public class Player {
   private int playerHealth;
   private boolean isPlayerDead;
   private String inventory;
+  private int extraDamage;
 
   // ctor
   public Player() {
@@ -43,5 +44,10 @@ public class Player {
   // add to players inventory
   public void addItem(String item) {
     inventory += " " + item;
+  }
+
+
+  public void blockDamage(int amt){
+      playerHealth += amt;
   }
 }
