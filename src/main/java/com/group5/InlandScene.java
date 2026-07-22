@@ -15,6 +15,7 @@ public class InlandScene implements Scene{
                         " As the heat of the sun on the sand begins to burn your salt-soaked feet, \n" +
                         " you hurriedly run to the closet form of shade- a small dark cave just along the water.\n" +
                         " At the edge of the cave, you spot a large, meaty, would-be-sooo delicious crab.\n" +
+                        "----------------------------------------\n" +
                         " Your stomach begins to rumble again… and just before you can move, the crab runs deeper into the darkness of the cave. \n" +
                         " You look back out to the beach and wonder when help will arrive. \n" +
                         " You look to the cave, and think how deep could it possibly go\n"+

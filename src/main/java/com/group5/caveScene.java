@@ -62,7 +62,7 @@ public class caveScene implements Scene {
 
                 String goblinPromt =   "Goblins!\n " +
                         "*Dice Roll Encounter\n" +
-                        "You run down the green tunnel towards the shadows.\n " +
+                        "You run down the green tunnel towards the shadows.\n" +
                         "Could it be your friends? Could it be their captors?\n" +
                         "You stop in your tracks to see a giant door.Guarding it, goblins. Like, a bunch of Goblins.\n" +
                         "The Goblins hiss at you before falling into formation, their swords pointed towards you.\n" +
@@ -85,18 +85,21 @@ public class caveScene implements Scene {
 
                 if(numRoll < 10){
                     //output the player rolled number and set player dead
-                    String output ="You lunge at the Siren and slip on the wet stones, hitting your head and being dragged into the dark water.";
+                    String output = "You lunge at the Siren and slip on the wet stones, hitting your head and being dragged into the dark water.";
                     System.out.println(output);
                     player.setPlayerDead();
                 }
                 else {
                     String output =
+                            "----------------------------------------\n" +
                     "You lunge at the siren and grab them, your arms wrapping\n" +
                     "around them as they are restrained. There is no need for violence, the fish person\n" +
                     "calmly muses. At least… not with us… You release your grip.\n" +
-                    "I know who you are looking for.  A large whirlpool begins to form in front of you.\n" +
-                    "Your friends are just through here. But beware, they are guarded by a beast. We are sworn not to intrude on it,\n" +
-                    "lest it come for our own. But perhaps we can help you defeat it.\n";
+                    "'I know who you are looking for.'\n"+
+                    "A large whirlpool begins to form in front of you.\n" +
+                    "'Your friends are just through here. But beware, they are guarded by a beast. We are sworn not to intrude on it,\n" +
+                    "lest it come for our own. But perhaps we can help you defeat it.'\n" +
+                    "----------------------------------------\n";
                     System.out.println(output);
                     complete=true;
                     nextScene = new HallwayScene();
@@ -114,9 +117,13 @@ public class caveScene implements Scene {
                 }
                 else {
                     String output =
-                    " The sirens face softens in deep appreciation for your song. “I know who you are looking for.\n"+
-                    "A large whirlpool begins to form in front of you. Your friends are just through here. But beware, they\n" +
-                    "are guarded by a beast. We are sworn not to intrude on it, lest it come for our own. But perhaps we can help you defeat it.\n";
+                            "----------------------------------------\n" +
+                    " The sirens face softens in deep appreciation for your song.\n"+
+                    "'I know who you are looking for.'\n"+
+                    "A large whirlpool begins to form in front of you.\n"+
+                    "'Your friends are just through here. But beware, they are guarded by a beast.\n" +
+                    "We are sworn not to intrude on it, lest it come for our own. But perhaps we can help you defeat it.'\n" +
+                    "----------------------------------------\n";
                     System.out.println(output);
                     complete = true;
                     nextScene = new HallwayScene();
@@ -136,12 +143,15 @@ public class caveScene implements Scene {
                 }
                 else {
                     String output =
+                            "----------------------------------------\n" +
                     "You're stronger than a toddler!\n" +
                     "You lunge at the Goblin closest and strike true, knocking it back a few feet to the ground.\n"+
                     "It didn’t take much, they're tiny guys. The other goblins  look at you and revere you as the strongest\n"+
-                    "in the room. The goblin on the ground crawls towards you, “Oh please, help us defeat the beast beyond\n"+
-                    "this door! We have been able to keep it contained but have lost too many trying to fight it! It killed\n"+
-                    "one of your men when you crashed, but together we can free your friends and ours!";
+                    "in the room. The goblin on the ground crawls towards you..." + " \n" +
+                            "Oh please, help us defeat the beast beyond this door\n"+
+                    "We have been able to keep it contained but have lost too many trying to fight it!\n"+
+                    "Its killed one of your men when you crashed, but together we can free your friends and ours!'\n"  +
+                                    "----------------------------------------\n";
                     System.out.println(output);
                     complete = true;
                     nextScene = new HallwayScene();
@@ -160,12 +170,13 @@ public class caveScene implements Scene {
                 }
                 else {
                     String output =
+                            "----------------------------------------\n" +
                     "You calmly explain that you mean no harm and that you are simply looking for your crew.\n" +
                     "The Goblin closest to you looks to his group and then back at you before dropping to its knees.\n"+
-
-                     "Oh please, help us defeat the beast beyond this door! We have been able to keep it out of this tunnel\n" +
+                     "'Oh please, help us defeat the beast beyond this door! We have been able to keep it out of this tunnel\n" +
                      "but have lost too many trying to fight it! It killed one of your men when you crashed, but together\n" +
-                      "we can free your friends and ours!";
+                      "we can free your friends and ours!'\n" +
+                            "----------------------------------------\n";
                     System.out.println(output);
                     complete = true;
                     nextScene = new HallwayScene();
