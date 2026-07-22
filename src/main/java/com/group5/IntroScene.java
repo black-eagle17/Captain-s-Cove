@@ -25,7 +25,7 @@ public class IntroScene implements Scene{
                         """
         );
         _sceneState.getChoices().add("(1a) Travel inland and search for food.");
-        _sceneState.getChoices().add("(1b) Investigate the Artemis <!>");
+        _sceneState.getChoices().add("(1b) Investigate the Artemis!!");
     }
 
     @Override
