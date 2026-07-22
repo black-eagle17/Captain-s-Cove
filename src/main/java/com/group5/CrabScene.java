@@ -10,6 +10,8 @@ public class CrabScene implements Scene {
 
   public CrabScene() {
     this._sceneState = new SceneState();
+    this._sceneState.setSceneIsEnemy();
+    this._sceneState.setEnemyNameAndAbility("CRAB","MASSIVE IRON CLAW");
     _sceneState.setSceneName("Boss Crab Scene");
     _sceneState.setStory(
         """

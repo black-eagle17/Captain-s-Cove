@@ -16,7 +16,7 @@ public class Application {
         this._state = GameState.RUNNING;
         this.player = new Player();
         this._drawer = new Drawer();
-        this._enemy = new Enemy("NO ENEMY");
+        this._enemy = null;
 
     }
 
@@ -43,6 +43,9 @@ public class Application {
                 _state = GameState.DIED;
             }else if (currScene.isComplete()) {
                 advanceLevel(); //can I advance to the next level
+                if(currScene.getSceneState().isSceneEnemy()){
+                    setEnemy(currScene.getSceneState().getEnemyName(), currScene.getSceneState().getAbility());
+                }
             }
 
         }
@@ -56,6 +59,11 @@ public class Application {
         } else {
             currScene = next ; //set the next level/scene
         }
+    }
+
+    //tell the application class we now have an enemy
+    private void setEnemy(String name, String ability){
+        _enemy = new Enemy(name, ability);
     }
 
 

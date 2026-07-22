@@ -8,9 +8,14 @@ public class SceneState {
     private String sceneName;
     private String _story;
     private ArrayList<String> _choices;
+    private boolean hasEnemy;
+    private  String enemyName;
+    private  String ability;
 
     public SceneState(){
+
         _choices = new ArrayList<String>();
+        hasEnemy = false;
     }
 
     public String getSceneName() {
@@ -35,5 +40,21 @@ public class SceneState {
 
     public ArrayList<String> getChoices() {
         return _choices;
+    }
+    public boolean isSceneEnemy(){
+        return  hasEnemy;
+    }
+    public  void setSceneIsEnemy(){
+        hasEnemy =true;
+    }
+    public void setEnemyNameAndAbility(String name, String _ability){
+        enemyName = name;
+        ability = _ability;
+    }
+    public String getEnemyName() {
+        return enemyName;
+    }
+    public String getAbility(){
+        return ability;
     }
 }

@@ -7,11 +7,11 @@ public class Enemy {
   private String inventory;
 
   // ctor
-  public Enemy(String name) {
+  public Enemy(String name, String capabilities) {
     this.name = name;
     this.enemyHealth = 100;
     this.isEnemyDead = false;
-    this.inventory = "Massive Iron Claw";
+    this.inventory = capabilities;
   }
 
   // check the isEnemyDead flag and return its value
