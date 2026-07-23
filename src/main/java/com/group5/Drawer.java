@@ -22,23 +22,18 @@ public class Drawer {
         }
         display.repeat("─", WIDTH).append("\n\n");
 
-        // Choices - dynamically centered based on the screen WIDTH
+        // Choices
         for (int i = 0; i < _sceneState.getChoices().size(); i++) {
-            String choiceLine = "[" + (i + 1) + "] " + _sceneState.getChoices().get(i);
-            int paddingSize = Math.max(0, (WIDTH - choiceLine.length()) / 2);
-
-            display.append(" ".repeat(paddingSize)).append(choiceLine).append("\n");
+            display.append("  [").append(i + 1).append("] ")
+                    .append(_sceneState.getChoices().get(i)).append("\n");
         }
-
-        // Centered choice input prompt
-        String prompt = "> Choose: ";
-        int promptPadding = Math.max(0, (WIDTH - prompt.length()) / 2);
-        display.append("\n").append(" ".repeat(promptPadding)).append(prompt);
+        display.append("\n  > Choose: ");
 
         System.out.print(display);
         System.out.flush();
     }
 
+    //template for player and enemy stats
     private String gameStatus(String name, int hp, int maxHp, String extra) {
         return " " + padRight(name, 12) + " HP " + bar(hp, maxHp) + " " + hp + "/" + maxHp + " " + extra + "\n";
     }
@@ -51,7 +46,7 @@ public class Drawer {
         if (hp > 0 && filled == 0) filled = 1;
         return "#".repeat(filled) + "-".repeat(BAR_LENGTH - filled);
     }
-
+   //help with padding of the Strings
     private String padRight(String str, int width) {
         if (str.length() >= width) return str.substring(0, width);
         return str + " ".repeat(width - str.length());
