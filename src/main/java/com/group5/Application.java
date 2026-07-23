@@ -49,7 +49,11 @@ public class Application {
             }
 
         }
-        System.out.println("GAME OVER!!! YOU LOST"); // print game over
+        //if game state = DIED then output losing scene
+        if(_state == GameState.DIED){
+            //should be a losing Scene Ideally
+            System.out.println("GAME OVER!!! YOU LOST"); // print game over
+        }
     }
     //grab the next scene or check if we won the game
     private void advanceLevel() {

@@ -12,6 +12,11 @@ public class InputHandler {
     if (userInput.isEmpty())
       return GameEvent.UNKNOWN;
 
+    //check to see if it is only so we can quit
+    if(userInput.length() == 1 && userInput.charAt(0) == 'q'){
+        return GameEvent.QUIT;
+    }
+
     String choice = userInput.substring(0, 2);
     return switch (choice) {
       case "1a" -> GameEvent.TRAVEL;
@@ -35,6 +40,7 @@ public class InputHandler {
       case "4a" -> GameEvent.ATTEMPT;
       case "4b" -> GameEvent.READY;
       case "ff" -> GameEvent.ATTACK_CRAB;
+      case "6a" -> GameEvent.STATS;
       default -> GameEvent.UNKNOWN;
 
     };

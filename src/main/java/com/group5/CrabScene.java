@@ -66,7 +66,9 @@ public class CrabScene implements Scene {
         }
         else if(player.getHp()>0 && crab.getEnemyHp()<=0){
            // should set scene to a winning scene
-          System.out.println("Winnner");
+           nextScene = new WinScene();
+           complete = true;
+           return;
         }
 
 
@@ -97,4 +99,3 @@ public class CrabScene implements Scene {
 
 
   }
-

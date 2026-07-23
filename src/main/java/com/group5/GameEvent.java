@@ -25,5 +25,6 @@ public enum GameEvent {
   ATTEMPT,
   READY,
   FIGHT,
-  USE_LOOT
+  USE_LOOT,
+  STATS,
 }
