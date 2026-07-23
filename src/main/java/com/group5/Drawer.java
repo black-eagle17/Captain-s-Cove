@@ -1,12 +1,10 @@
 package com.group5;
 
-
 public class Drawer {
     //draws ui to the screen
     public void draw(SceneState _sceneState, Player _player, Enemy _enemy) {
         final int WIDTH = 60; // wrap text after 60 characters
         StringBuilder display = new StringBuilder(); // final output string
-
 
         // print rpg game name and display current scene name
         int dashes = Math.max(3, WIDTH - _sceneState.getTitle().length() - 1);
@@ -14,8 +12,7 @@ public class Drawer {
 
         // print the story prompt for the current scene
         for (String line : _sceneState.getStory().split("\n")){
-            display.append("  ").append(line).append("\n");
-
+            display.append(" ").append(line).append("\n");
         }
 
         // Player and enemy health stats
@@ -25,29 +22,32 @@ public class Drawer {
         }
         display.repeat("─", WIDTH).append("\n\n");
 
-        // Choices
+        // Choices - dynamically centered based on the screen WIDTH
         for (int i = 0; i < _sceneState.getChoices().size(); i++) {
-            display.append("  [").append(i + 1).append("] ")
-                    .append(_sceneState.getChoices().get(i)).append("\n");
+            String choiceLine = "[" + (i + 1) + "] " + _sceneState.getChoices().get(i);
+            int paddingSize = Math.max(0, (WIDTH - choiceLine.length()) / 2);
+
+            display.append(" ".repeat(paddingSize)).append(choiceLine).append("\n");
         }
-        display.append("\n  > Choose: ");
+
+        // Centered choice input prompt
+        String prompt = "> Choose: ";
+        int promptPadding = Math.max(0, (WIDTH - prompt.length()) / 2);
+        display.append("\n").append(" ".repeat(promptPadding)).append(prompt);
 
         System.out.print(display);
         System.out.flush();
     }
 
     private String gameStatus(String name, int hp, int maxHp, String extra) {
-        return "  " + padRight(name, 12) + " HP " + bar(hp, maxHp)
-                + " " + hp + "/" + maxHp + "   " + extra + "\n";
+        return " " + padRight(name, 12) + " HP " + bar(hp, maxHp) + " " + hp + "/" + maxHp + " " + extra + "\n";
     }
+
     private String bar(int hp, int maxHp) {
         final int BAR_LENGTH = 12;
-
         if (maxHp <= 0) return "-".repeat(BAR_LENGTH);
-
         int filled = (int) Math.round((double) hp / maxHp * BAR_LENGTH);
         filled = Math.clamp(filled, 0, BAR_LENGTH);
-
         if (hp > 0 && filled == 0) filled = 1;
         return "#".repeat(filled) + "-".repeat(BAR_LENGTH - filled);
     }
